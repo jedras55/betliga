@@ -24,5 +24,17 @@ Funkcjonalności:
     - obstawianie wyników meczów przez uczestników za pomocą 
     - zamykanie kolejki z wpisanymi wynikami przez moderatora
     - automatyczne wyliczanie punktów i tworzenie rankingu
+    
+    Biblioteki których używam:
+    - Spring Data JPA - do pobierania/modyfikacji danych w bazie, dodatkowo do implementacji filtrowania, sortowania czy paginacji
+    - Spring Email - do wysyłania poczty np. przy rejestracji
+    - MyBatis - do pobierania z bazy tylko tych kolumn, które chcę, bez mapowania całego świata
+    - H2 - przy developmencie taki rodzaj bazy wystarczy w zupełności, nie muszę się przejmować stawianiem serwera bazy danych, uprawnieniami itp
+    - Liquibase - do przechowywania i zarządzania zmianami w bazie danych
+    - Spring Security - do zabezpieczenia aplikacji, z frontu będzie React/Angular, powinno się dobrze łączyć
+    - Spring Web - do uruchamiania aplikacji na Tomcacie i tworzenia REST API
+    - Spring Devtools - do przyspieszania tworzenia oprogramowania, między innnymi przez brak potrzeby ciągłego buildowania projektu
+    - Lombok - do pozbycia się boilerplate code'u i poprawy przejrzystości, wadą Lomboka jest instalowanie wtyczek w środowisku, jako że zamierzam programować sam, nie będzie to wadą
+
 
 Projekt nie zamyka się tylko na ligi esportowe, każdy może stworzyć sobie ligę jaką chce, np polskiej Ekstraklasy. Od moderatora ligi zależy jak nazwie ligę, jakie mecze będzie dodawać i kogo zaprosi.
