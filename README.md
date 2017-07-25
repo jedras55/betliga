@@ -25,7 +25,7 @@ Funkcjonalności:
     - zamykanie kolejki z wpisanymi wynikami przez moderatora
     - automatyczne wyliczanie punktów i tworzenie rankingu
     
-    Biblioteki których używam:
+      Biblioteki których używam:
     - Spring Data JPA - do pobierania/modyfikacji danych w bazie, dodatkowo do implementacji filtrowania, sortowania czy paginacji
     - Spring Email - do wysyłania poczty np. przy rejestracji
     - MyBatis - do pobierania z bazy tylko tych kolumn, które chcę, bez mapowania całego świata
