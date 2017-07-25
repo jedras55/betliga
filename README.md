@@ -7,7 +7,7 @@ Później ktoś ręcznie dodaje zakłady od każdej osoby, a wyniki prezentowane
 
 Cały proces wymaga dużo pracy od osoby zajmującej się tym i łatwo jest popełnić błąd. Zdecydowanie przydałaby się mu automatyzacja!
 
-Funkcjonalności:
+    Funkcjonalności:
   
     -dwa rodzaje lig: 
       - punktowa - za każdy trafiony mecz zdobywa się punkty, liga trwa do końca sezonu, zwycięża osoba z największą ilością punktów 
@@ -25,7 +25,8 @@ Funkcjonalności:
     - zamykanie kolejki z wpisanymi wynikami przez moderatora
     - automatyczne wyliczanie punktów i tworzenie rankingu
     
-      Biblioteki których używam:
+    Biblioteki których używam:
+      
     - Spring Data JPA - do pobierania/modyfikacji danych w bazie, dodatkowo do implementacji filtrowania, sortowania czy paginacji
     - Spring Email - do wysyłania poczty np. przy rejestracji
     - MyBatis - do pobierania z bazy tylko tych kolumn, które chcę, bez mapowania całego świata
