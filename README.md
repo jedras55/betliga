@@ -36,6 +36,7 @@ Cały proces wymaga dużo pracy od osoby zajmującej się tym i łatwo jest pope
     - Spring Web - do uruchamiania aplikacji na Tomcacie i tworzenia REST API
     - Spring Devtools - do przyspieszania tworzenia oprogramowania, między innnymi przez brak potrzeby ciągłego buildowania projektu
     - Lombok - do pozbycia się boilerplate code'u i poprawy przejrzystości, wadą Lomboka jest instalowanie wtyczek w środowisku, jako że zamierzam programować sam, nie będzie to wadą
+    - Spring HATEOAS - do wspomagania w tworzeniu odpowiednich adresów w API
 
 
 Projekt nie zamyka się tylko na ligi esportowe, każdy może stworzyć sobie ligę jaką chce, np polskiej Ekstraklasy. Od moderatora ligi zależy jak nazwie ligę, jakie mecze będzie dodawać i kogo zaprosi.
