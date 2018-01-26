@@ -1,9 +1,12 @@
 package pl.ostrowski.account.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import pl.ostrowski.account.dto.UserDto;
 import pl.ostrowski.account.service.RegisterService;
 
@@ -22,9 +25,8 @@ public class RegisterController {
   }
 
   @RequestMapping(value = "/user", method = RequestMethod.POST)
-  @ResponseStatus(value = HttpStatus.OK)
-  public void registerUser(@Valid @RequestBody UserDto userDto) {
-    registerService.registerUser(userDto);
+  public ResponseEntity registerUser(@Valid @RequestBody UserDto userDto) {
+    return registerService.registerUser(userDto);
   }
 
   @RequestMapping(value = "/checkUsername", method = RequestMethod.POST)
