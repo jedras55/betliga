@@ -7,5 +7,5 @@ public class PasswordPatternException extends Exception {
 
     public PasswordPatternException() {
         super("Hasło nie pasuje do formy");
-    }
+  }
 }

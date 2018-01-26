@@ -7,5 +7,5 @@ public class UsernameExistsException extends Exception {
 
     public UsernameExistsException() {
         super("Użytkownik istnieje");
-    }
+  }
 }

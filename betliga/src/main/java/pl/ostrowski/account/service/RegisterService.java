@@ -35,7 +35,7 @@ public class RegisterService {
     } catch (Exception e) {
       return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
     }
-    //TODO Potwierdzenie maila
+    // TODO Potwierdzenie maila
     return new ResponseEntity(HttpStatus.OK);
   }
 
@@ -47,7 +47,9 @@ public class RegisterService {
     return userRepository.existsByEmail(email);
   }
 
-  private void saveUser(UserDto userDto) throws PasswordPatternException, PasswordMatcherException, EmailExistsException, UsernameExistsException {
+  private void saveUser(UserDto userDto)
+          throws PasswordPatternException, PasswordMatcherException, EmailExistsException,
+          UsernameExistsException {
     if (!checkUsernameExists(userDto.getUsername())) {
       if (!checkEmailExists(userDto.getEmail())) {
         if (checkPasswordsMatches(userDto.getPassword(), userDto.getMatchingPassword())) {

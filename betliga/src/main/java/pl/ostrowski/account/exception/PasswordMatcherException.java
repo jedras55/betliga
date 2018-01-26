@@ -7,5 +7,5 @@ public class PasswordMatcherException extends Exception {
 
     public PasswordMatcherException() {
         super("Hasła nie pasują do siebie");
-    }
+  }
 }

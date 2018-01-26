@@ -7,5 +7,5 @@ public class EmailExistsException extends Exception {
 
     public EmailExistsException() {
         super("Email istnieje");
-    }
+  }
 }
