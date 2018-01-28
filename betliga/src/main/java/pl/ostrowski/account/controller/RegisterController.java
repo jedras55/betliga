@@ -3,10 +3,7 @@ package pl.ostrowski.account.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import pl.ostrowski.account.dto.UserDto;
 import pl.ostrowski.account.service.RegisterService;
 
@@ -29,15 +26,23 @@ public class RegisterController {
     return registerService.registerUser(userDto);
   }
 
-  @RequestMapping(value = "/checkUsername", method = RequestMethod.POST)
+    @RequestMapping(value = "/checkUsername", method = RequestMethod.GET)
   @ResponseBody
   public boolean checkUsername(@RequestBody String username) {
     return registerService.checkUsernameExists(username);
   }
 
-  @RequestMapping(value = "/checkEmail", method = RequestMethod.POST)
+    @RequestMapping(value = "/checkEmail", method = RequestMethod.GET)
   @ResponseBody
   public boolean checkEmail(@RequestBody String email) {
     return registerService.checkEmailExists(email);
   }
+
+    @RequestMapping(value = "/{username}/{confirmationKey}/confirm", method = RequestMethod.GET)
+    @ResponseBody
+    public boolean confirmAccount(
+            @PathVariable("username") String username,
+            @PathVariable("confirmationKey") String confirmationKey) {
+        return registerService.confirmAccount(username, confirmationKey);
+    }
 }

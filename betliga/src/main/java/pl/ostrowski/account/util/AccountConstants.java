@@ -11,6 +11,7 @@ public class AccountConstants {
           + "."
           + "{6,15}"
           + "$";
+    public static final Integer TOKEN_EXPIRATION_TIME_IN_HOURS = 24;
 
   private AccountConstants() {
     throw new AssertionError("Inaccessible utility class constructor");
