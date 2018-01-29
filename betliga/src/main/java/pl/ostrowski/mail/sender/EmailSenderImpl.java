@@ -1,10 +1,11 @@
-package pl.ostrowski.mail;
+package pl.ostrowski.mail.sender;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+import pl.ostrowski.mail.util.EmailConstants;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
@@ -29,7 +30,7 @@ public class EmailSenderImpl implements EmailSender {
         try {
             MimeMessageHelper helper = new MimeMessageHelper(mail, true);
             helper.setTo(to);
-            helper.setFrom("jedrzej.ostrowski@gmail.com");
+            helper.setFrom(EmailConstants.AUTHOR_EMAIL);
             helper.setSubject(title);
             helper.setText(content, true);
 
@@ -37,5 +38,5 @@ public class EmailSenderImpl implements EmailSender {
             log.error(e.getMessage());
         }
         javaMailSender.send(mail);
-    }
+  }
 }

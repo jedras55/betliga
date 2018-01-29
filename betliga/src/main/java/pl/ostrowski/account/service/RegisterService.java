@@ -16,7 +16,9 @@ import pl.ostrowski.account.model.User;
 import pl.ostrowski.account.repository.ConfirmationKeyRepository;
 import pl.ostrowski.account.repository.UserRepository;
 import pl.ostrowski.account.util.AccountConstants;
-import pl.ostrowski.mail.EmailSenderImpl;
+import pl.ostrowski.mail.sender.EmailSenderImpl;
+import pl.ostrowski.mail.util.EmailConstants;
+import pl.ostrowski.util.ApplicationConstants;
 
 import java.util.Date;
 import java.util.regex.Pattern;
@@ -87,12 +89,13 @@ public class RegisterService {
             confirmationKeyRepository.save(confirmationKey);
             emailSender.sendEmail(
                     userDto.getEmail(),
-                    "Potwierdzenie maila",
-                    "<a href=\"http://localhost:8080/register/"
-                            + user.getUsername()
-                            + "/"
-                            + confirmationKey.getConfirmationKey()
-                            + "/confirm\"> tutaj</a>");
+                    EmailConstants.EMAIL_TITLE_PATTERN,
+                    String.format(
+                            EmailConstants.EMAIL_CONTENT_PATTERN,
+                            user.getUsername(),
+                            ApplicationConstants.APPLICATION_URL,
+                            user.getUsername(),
+                            confirmationKey.getConfirmationKey()));
           } else {
             throw new PasswordPatternException();
           }

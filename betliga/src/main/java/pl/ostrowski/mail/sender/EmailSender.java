@@ -1,4 +1,4 @@
-package pl.ostrowski.mail;
+package pl.ostrowski.mail.sender;
 
 /**
  * Created by Jedras-PC on 29.01.2018.
